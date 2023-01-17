@@ -3,6 +3,26 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    @apply overflow-x-hidden;
+  }
+
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .wrapper.menu-open .sidebar {
+    display: block;
+  }
+
+  .wrapper.menu-open {
+    grid-template-columns: 250px 100vw;
+  }
+
   :is(h1, h2, h3, h4, h5, h6) {
     @apply font-serif;
   }
@@ -43,8 +63,7 @@
     @apply bg-primary-100;
     @apply font-sans;
     @apply text-white;
-    @apply py-3;
-    @apply px-4;
+    @apply p-3;
     @apply flex;
     @apply justify-center;
     @apply items-center;
@@ -59,5 +78,6 @@
 
   .primary-btn > span {
     @apply ml-1;
+    @apply text-white;
   }
 }
