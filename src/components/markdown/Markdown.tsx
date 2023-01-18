@@ -1,7 +1,12 @@
 import React from "react";
+import Body from "./Body";
+import Header from "./Header";
 
-interface Props {}
-
-export const Markdown = (props: Props) => {
-  return <div></div>;
+export const Markdown = () => {
+  return (
+    <div>
+      <Header />
+      <Body />
+    </div>
+  );
 };
