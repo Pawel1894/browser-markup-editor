@@ -5,7 +5,7 @@ import Preview from "../preview/Preview";
 export default function Editor(): ReactElement {
   return (
     <div>
-      <Markdown />
+      {/* <Markdown /> */}
       <Preview />
     </div>
   );
