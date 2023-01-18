@@ -25,11 +25,11 @@ export default function DeletePrompt({ isOpen, setIsPromptOpen }: Props): ReactE
       onClick={() => setIsPromptOpen(false)}
     >
       <div
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-md p-6"
+        className="w-[343px] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-md p-6"
         onClick={stopPropagation}
       >
         <span className="text-neutral-400 font-bold text-xl font-serif">Delete this document?</span>
-        <p className="my-4 text-neutral-600 max-w-[36ch] font-serif font-normal">
+        <p className="my-4 text-neutral-600 font-serif font-normal text-sm">
           Are you sure you want to delete the ‘welcome.md’ document and its contents? This action cannot be
           reversed.
         </p>
