@@ -8,12 +8,12 @@ interface Props {}
 export default function Documents({}: Props): ReactElement {
   const documents = useAppSelector((state) => state.docs.documents);
   return (
-    <div>
+    <ul>
       {documents
         ? documents.map((item: TDocument) => {
             return <Document key={item.id} id={item.id} createdAt={item.createdAt} name={item.name} />;
           })
         : null}
-    </div>
+    </ul>
   );
 }

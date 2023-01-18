@@ -18,15 +18,14 @@ export default function Document({ createdAt, name, id }: Props): ReactElement {
   }
 
   return (
-    <div
-      role={"button"}
+    <button
       onClick={setActiveDocument}
       title={name}
       className="group relative flex items-center overflow-x-auto mt-6 "
     >
       <img src={CopyIcon} />
       <div className="ml-4 ">
-        <span className="hidden text-neutral-600 text-xs leading-none md:block">{createdAt}</span>
+        <span className="hidden w-fit text-neutral-600 text-xs leading-none md:block">{createdAt}</span>
         <span
           className={`${
             activeDocId === id ? "text-primary-100" : "text-white"
@@ -35,6 +34,6 @@ export default function Document({ createdAt, name, id }: Props): ReactElement {
           {name}
         </span>
       </div>
-    </div>
+    </button>
   );
 }
