@@ -1,20 +1,21 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useState } from "react";
 import DeleteIcon from "../../assets/icon-delete.svg";
-import { useAppDispatch } from "../../hooks/redux";
-import { documentActions } from "../../redux/document-slice";
+import DeletePrompt from "./DeletePrompt";
 
 export default function DocumentDelete(): ReactElement {
-  const dispatch = useAppDispatch();
+  const [isPromptOpen, setIsPromptOpen] = useState(false);
 
   function onClickHandler() {
-    confirm("test");
-    dispatch(documentActions.deleteDocument());
+    setIsPromptOpen(true);
   }
 
   return (
-    <button className="ml-auto" onClick={onClickHandler}>
-      <img src={DeleteIcon} aria-hidden={true} alt="" />
-      <span className="sr-only">delete markdown document</span>
-    </button>
+    <>
+      <DeletePrompt isOpen={isPromptOpen} setIsPromptOpen={setIsPromptOpen} />
+      <button className="ml-auto" onClick={onClickHandler}>
+        <img src={DeleteIcon} aria-hidden={true} alt="" />
+        <span className="sr-only">delete markdown document</span>
+      </button>
+    </>
   );
 }

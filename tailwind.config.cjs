@@ -20,6 +20,7 @@ module.exports = {
         200: "rgb(243, 151, 101)",
       },
       white: "rgb(255, 255, 255)",
+      transparent: "rgba(0,0,0,0.4)",
     },
     fontFamily: {
       sans: ["Roboto", "sans-serif"],
