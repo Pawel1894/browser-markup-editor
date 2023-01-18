@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction, current } from "@reduxjs/toolkit";
 import { TDocument } from "../types";
 
 export const documentSlice = createSlice({
@@ -33,6 +33,17 @@ export const documentSlice = createSlice({
       } satisfies TDocument;
 
       state.documents?.push(newDoc);
+    },
+    deleteDocument(state) {
+      if (!state.documents) return;
+      const newDocs = state.documents.filter((doc) => doc.id !== state.activeDoc?.id);
+      state.documents = newDocs;
+
+      if (state.documents.length > 0) {
+        state.activeDoc = state.documents[0];
+      } else {
+        state.activeDoc = null;
+      }
     },
   },
 });
