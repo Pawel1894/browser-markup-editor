@@ -7,6 +7,7 @@ export const documentSlice = createSlice({
     documents: null as Array<TDocument> | null,
     activeDoc: null as TDocument | null,
     unsavedData: false,
+    isPreview: false,
   },
   reducers: {
     loadDocuments(state, action: PayloadAction<TDocument[]>) {
@@ -17,14 +18,23 @@ export const documentSlice = createSlice({
       state.unsavedData = false;
       const docs = state.documents;
       const newActive = docs?.find((doc) => doc.id === action.payload);
-      if (newActive) state.activeDoc = newActive;
+      if (newActive) {
+        state.activeDoc = newActive;
+        state.isPreview = false;
+      }
     },
     updateName(state, action: PayloadAction<{ id: string; name: string }>) {
       if (!state.activeDoc) return;
       state.unsavedData = true;
       state.activeDoc.name = action.payload.name;
     },
+    updateMarkdown(state, action: PayloadAction<string>) {
+      if (!state.activeDoc) return;
+      state.unsavedData = true;
+      state.activeDoc.content = action.payload;
+    },
     insertDocument(state) {
+      state.unsavedData = false;
       const newDoc = {
         id: window.crypto.randomUUID(),
         content: "",
@@ -33,6 +43,8 @@ export const documentSlice = createSlice({
       } satisfies TDocument;
 
       state.documents?.push(newDoc);
+      state.activeDoc = newDoc;
+      state.isPreview = false;
     },
     deleteDocument(state) {
       if (!state.documents) return;
@@ -51,6 +63,9 @@ export const documentSlice = createSlice({
       state.documents[docIdx].name = state.activeDoc?.name;
       state.documents[docIdx].content = state.activeDoc?.content;
       state.documents[docIdx].createdAt = new Date().toLocaleDateString("en-US");
+    },
+    togglePreview(state) {
+      state.isPreview = !state.isPreview;
     },
   },
 });

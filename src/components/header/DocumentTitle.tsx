@@ -26,7 +26,7 @@ export default function DocumentTitle(): ReactElement {
         <input
           type="text"
           className={`text-white bg-[transparent] outline-none border-b border-b-[transparent] focus:border-b-neutral-800 caret-primary-100 selection:bg-primary-100`}
-          value={activeDoc ? activeDoc.name : "No documents"}
+          value={activeDoc ? activeDoc.name : ""}
           disabled={activeDoc ? false : true}
           onChange={onChangeHandler}
         />

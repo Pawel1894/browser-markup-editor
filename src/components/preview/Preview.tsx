@@ -1,16 +1,12 @@
 import React, { ReactElement } from "react";
-import ReactMarkdown from "react-markdown";
-import { useAppSelector } from "../../hooks/redux";
+import Body from "./Body";
+import Header from "./Header";
 
-interface Props {}
-
-export default function Preview({}: Props): ReactElement {
-  const activeDoc = useAppSelector((state) => state.docs.activeDoc);
-  if (!activeDoc) return <span>No active document</span>;
-
+export default function Preview(): ReactElement {
   return (
     <div>
-      <ReactMarkdown>{activeDoc.content}</ReactMarkdown>
+      <Header />
+      <Body />
     </div>
   );
 }
