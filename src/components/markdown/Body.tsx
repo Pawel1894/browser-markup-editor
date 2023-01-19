@@ -1,13 +1,14 @@
 import React, { ChangeEvent, ReactElement } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
+import { insertDocument } from "../../redux/actions";
 import { documentActions } from "../../redux/document-slice";
 
 export default function Body(): ReactElement {
-  const { activeDoc, documents } = useAppSelector((state) => state.docs);
+  const { activeDoc } = useAppSelector((state) => state.docs);
   const dispatch = useAppDispatch();
 
   function newDoc() {
-    dispatch(documentActions.insertDocument());
+    dispatch(insertDocument());
   }
 
   if (!activeDoc)
