@@ -5,6 +5,11 @@ import Preview from "../preview/Preview";
 
 export default function Editor(): ReactElement {
   const isPreview = useAppSelector((state) => state.docs.isPreview);
-
-  return <div>{isPreview ? <Preview /> : <Markdown />}</div>;
+  console.log(window.innerWidth);
+  return (
+    <div className={`grid grid-cols-1 ${!isPreview ? "md:grid-cols-2" : null}`}>
+      {!isPreview ? <Markdown /> : null}
+      {isPreview || window.innerWidth >= 768 ? <Preview /> : null}
+    </div>
+  );
 }

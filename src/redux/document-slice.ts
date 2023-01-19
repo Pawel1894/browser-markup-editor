@@ -59,7 +59,8 @@ export const documentSlice = createSlice({
     },
     saveChanges(state) {
       if (!state.documents || !state.activeDoc) return;
-      const docIdx = state.documents.findIndex((doc) => doc.id !== state.activeDoc?.id);
+
+      const docIdx = state.documents.findIndex((doc) => doc.id === state.activeDoc?.id);
       state.documents[docIdx].name = state.activeDoc?.name;
       state.documents[docIdx].content = state.activeDoc?.content;
       state.documents[docIdx].createdAt = new Date().toLocaleDateString("en-US");
