@@ -11,8 +11,10 @@ export default function Header(): ReactElement {
   }
 
   return (
-    <div className="bg-neutral-900 px-4 py-3 flex justify-between items-center">
-      <span className="font-medium text-neutral-600 text-sm tracking-widest">PREVIEW</span>
+    <div className="bg-neutral-900 dark:bg-neutral-200 px-4 py-3 flex justify-between items-center">
+      <span className="font-medium text-neutral-600 dark:text-neutral-700 text-sm tracking-widest">
+        PREVIEW
+      </span>
       <button onClick={onClickHandler}>
         <img src={HideIcon} alt="" />
       </button>

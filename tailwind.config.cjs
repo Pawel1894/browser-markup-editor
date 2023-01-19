@@ -21,6 +21,7 @@ module.exports = {
       },
       white: "rgb(255, 255, 255)",
       transparent: "rgba(0,0,0,0.4)",
+      lightTransparent: "rgba(255, 255, 255, 0.39)",
     },
     fontFamily: {
       sans: ["Roboto", "sans-serif"],

@@ -11,7 +11,6 @@ import { getItem, saveItem } from "./helpers/localStorage";
 
 function App() {
   const isMenuOpen = useAppSelector((state) => state.ui.isMenuOpen);
-  const isDarkTheme = useAppSelector((state) => state.ui.isDarkTheme);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -24,7 +23,7 @@ function App() {
   }, []);
 
   return (
-    <div className={`${isDarkTheme ? "dark" : ""} grid wrapper ${isMenuOpen ? "menu-open" : ""}`}>
+    <div className={`grid wrapper ${isMenuOpen ? "menu-open" : ""}`}>
       <Sidebar />
       <div>
         <Header />

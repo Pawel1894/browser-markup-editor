@@ -4,7 +4,7 @@ import Header from "./Header";
 
 export default function Preview(): ReactElement {
   return (
-    <div className="border-l-2 border-neutral-800">
+    <div className="border-l border-neutral-800">
       <Header />
       <Body />
     </div>

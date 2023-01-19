@@ -7,6 +7,10 @@
     @apply overflow-hidden;
   }
 
+  body.dark {
+    @apply bg-neutral-100;
+  }
+
   .wrapper {
     grid-template-columns: 1fr;
   }
@@ -25,6 +29,10 @@
 
   :is(h1, h2, h3, h4, h5, h6) {
     @apply font-serif;
+  }
+
+  .dark :is(h1, h2, h3, h4, h5) {
+    @apply text-white;
   }
 
   :is(h1, h3, h4, h5, h6) {
@@ -93,6 +101,10 @@
     @apply font-normal;
   }
 
+  .preview-markdown :is(p, li) {
+    @apply text-neutral-700;
+  }
+
   .preview-markdown :is(ol, ul) {
     @apply ml-6;
   }
@@ -115,6 +127,10 @@
     @apply text-sm;
   }
 
+  .dark .preview-markdown code {
+    @apply text-white;
+  }
+
   .preview-markdown blockquote {
     @apply bg-neutral-900;
     @apply p-6;
@@ -123,9 +139,17 @@
     @apply rounded-sm;
   }
 
+  .dark .preview-markdown blockquote {
+    @apply bg-neutral-300;
+  }
+
   .preview-markdown blockquote p {
     @apply text-neutral-100;
     @apply font-bold;
+  }
+
+  .dark .preview-markdown blockquote p {
+    @apply text-white;
   }
 
   .preview-markdown a {
@@ -136,5 +160,9 @@
   .preview-markdown pre {
     @apply bg-neutral-900;
     @apply p-6;
+  }
+
+  .dark .preview-markdown pre {
+    @apply bg-neutral-300;
   }
 }
