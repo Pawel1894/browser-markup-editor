@@ -6,7 +6,7 @@ import ThemeToggle from "./ThemeToggle";
 
 export default function Sidebar(): ReactElement {
   return (
-    <aside className="sidebar relative px-6 py-7 bg-neutral-100 h-screen">
+    <aside className="sidebar relative px-6 py-7 bg-neutral-200 h-screen">
       <div>
         <img src={Logo} alt="" />
       </div>
