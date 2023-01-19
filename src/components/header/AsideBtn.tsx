@@ -1,15 +1,13 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useState } from "react";
 import MenuIcon from "../../assets/icon-menu.svg";
 import CloseIcon from "../../assets/icon-close.svg";
-import { useAppDispatch, useAppSelector } from "../../hooks/redux";
-import { uiActions } from "../../redux/ui-slice";
 
 export default function AsideBtn(): ReactElement {
-  const dispatch = useAppDispatch();
-  const isMenuOpen = useAppSelector((state) => state.ui.isMenuOpen);
+  const [isMenuOpen, setIsMenuOpen] = useState(true);
 
   function toggleSidebar() {
-    dispatch(uiActions.toggleMenu());
+    setIsMenuOpen((prev) => !prev);
+    document.getElementsByTagName("body")[0].classList.toggle("menu-closed");
   }
 
   return (

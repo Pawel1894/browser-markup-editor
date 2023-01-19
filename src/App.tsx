@@ -10,7 +10,6 @@ import { TDocument } from "./types";
 import { getItem, saveItem } from "./helpers/localStorage";
 
 function App() {
-  const isMenuOpen = useAppSelector((state) => state.ui.isMenuOpen);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -23,7 +22,7 @@ function App() {
   }, []);
 
   return (
-    <div className={`grid wrapper ${isMenuOpen ? "menu-open" : ""}`}>
+    <div className={`grid wrapper transition-all`}>
       <Sidebar />
       <div>
         <Header />

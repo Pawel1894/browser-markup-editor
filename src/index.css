@@ -12,19 +12,26 @@
   }
 
   .wrapper {
-    grid-template-columns: 1fr;
+    grid-template-columns: 250px 100vw;
   }
 
   .sidebar {
-    display: none;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 1s;
   }
 
-  .wrapper.menu-open .sidebar {
-    display: block;
+  .menu-closed .wrapper .sidebar {
+    visibility: hidden;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
   }
 
-  .wrapper.menu-open {
-    grid-template-columns: 250px 100vw;
+  .menu-closed .wrapper {
+    grid-template-columns: 0px 100vw;
   }
 
   :is(h1, h2, h3, h4, h5, h6) {

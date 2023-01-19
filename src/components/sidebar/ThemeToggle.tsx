@@ -20,7 +20,11 @@ export default function ThemeToggle(): ReactElement {
         onClick={toggleTheme}
         className="w-12 h-6 bg-neutral-500 rounded-full relative p-2 flex items-center cursor-pointer"
       >
-        <span className={`w-3 h-3 bg-white block rounded-full ${!isDark ? "ml-auto" : null}`}></span>
+        <span
+          className={`transition-all w-3 h-3 bg-white block rounded-full ${
+            !isDark ? "translate-x-[170%]" : null
+          }`}
+        ></span>
       </span>
       <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
         <path
