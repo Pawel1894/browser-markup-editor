@@ -2,6 +2,7 @@ import React, { ChangeEvent, ReactElement } from "react";
 import CopyIcon from "../../assets/icon-document.svg";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { documentActions } from "../../redux/document-slice";
+import { toast } from "react-hot-toast";
 
 export default function DocumentTitle(): ReactElement {
   const activeDoc = useAppSelector((state) => state.docs.activeDoc);
@@ -18,9 +19,21 @@ export default function DocumentTitle(): ReactElement {
     );
   }
 
+  function copyMarkdown() {
+    let content = activeDoc?.content;
+    if (content) {
+      try {
+        navigator.clipboard.writeText(content);
+        toast("markdown copied");
+      } catch (error) {
+        toast.error("copy failed");
+      }
+    }
+  }
+
   return (
     <div title="test.md" className="relative flex items-center overflow-x-auto">
-      <img src={CopyIcon} />
+      <img className="cursor-pointer" onClick={copyMarkdown} src={CopyIcon} />
       <div className="ml-4 ">
         <span className="hidden text-neutral-600 text-xs leading-none md:block">Document Name</span>
         <input

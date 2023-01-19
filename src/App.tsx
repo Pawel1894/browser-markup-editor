@@ -5,7 +5,9 @@ import Sidebar from "./components/sidebar/Sidebar";
 import { useAppDispatch, useAppSelector } from "./hooks/redux";
 import data from "../public/data.json";
 import { documentActions } from "./redux/document-slice";
-import { Toaster, toast } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
+import { TDocument } from "./types";
+import { getItem, saveItem } from "./helpers/localStorage";
 
 function App() {
   const isMenuOpen = useAppSelector((state) => state.ui.isMenuOpen);
@@ -13,7 +15,12 @@ function App() {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(documentActions.loadDocuments(data));
+    const localData: TDocument[] = getItem("docs");
+    if (localData) dispatch(documentActions.loadDocuments(localData));
+    else {
+      dispatch(documentActions.loadDocuments(data));
+      saveItem("docs", data);
+    }
   }, []);
 
   return (

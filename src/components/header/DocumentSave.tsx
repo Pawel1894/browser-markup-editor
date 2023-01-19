@@ -3,12 +3,15 @@ import SaveIcon from "../../assets/icon-save.svg";
 import { useAppDispatch } from "../../hooks/redux";
 import { documentActions } from "../../redux/document-slice";
 import { toast } from "react-hot-toast";
+import { saveDocument } from "../../redux/actions";
 
 export default function DocumentSave(): ReactElement {
   const dispatch = useAppDispatch();
 
   function onClickHandler() {
-    dispatch(documentActions.saveChanges());
+    dispatch(saveDocument());
+    // saveItem("docs", docs);
+    // documentActions.saveChanges()
     toast.success("Document saved");
   }
 

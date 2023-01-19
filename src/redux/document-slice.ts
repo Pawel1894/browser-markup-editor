@@ -33,22 +33,15 @@ export const documentSlice = createSlice({
       state.unsavedData = true;
       state.activeDoc.content = action.payload;
     },
-    insertDocument(state) {
+    insertDocument(state, action: PayloadAction<TDocument>) {
       state.unsavedData = false;
-      const newDoc = {
-        id: window.crypto.randomUUID(),
-        content: "",
-        createdAt: new Date().toLocaleDateString("en-US"),
-        name: "Document.md",
-      } satisfies TDocument;
-
-      state.documents?.push(newDoc);
-      state.activeDoc = newDoc;
       state.isPreview = false;
+      state.documents?.push(action.payload);
+      state.activeDoc = action.payload;
     },
-    deleteDocument(state) {
+    deleteDocument(state, action: PayloadAction<TDocument[]>) {
       if (!state.documents) return;
-      const newDocs = state.documents.filter((doc) => doc.id !== state.activeDoc?.id);
+      const newDocs = action.payload;
       state.documents = newDocs;
 
       if (state.documents.length > 0) {
@@ -57,13 +50,8 @@ export const documentSlice = createSlice({
         state.activeDoc = null;
       }
     },
-    saveChanges(state) {
-      if (!state.documents || !state.activeDoc) return;
-
-      const docIdx = state.documents.findIndex((doc) => doc.id === state.activeDoc?.id);
-      state.documents[docIdx].name = state.activeDoc?.name;
-      state.documents[docIdx].content = state.activeDoc?.content;
-      state.documents[docIdx].createdAt = new Date().toLocaleDateString("en-US");
+    saveChanges(state, action: PayloadAction<TDocument[]>) {
+      state.documents = action.payload;
     },
     togglePreview(state) {
       state.isPreview = !state.isPreview;

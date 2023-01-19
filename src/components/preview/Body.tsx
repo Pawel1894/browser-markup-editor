@@ -1,18 +1,14 @@
 import React, { ReactElement } from "react";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
-import { useDispatch } from "react-redux";
-import { useAppSelector } from "../../hooks/redux";
-import { documentActions } from "../../redux/document-slice";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux";
+import { insertDocument } from "../../redux/actions";
 
-interface Props {}
-
-export default function Body({}: Props): ReactElement {
-  const dispatch = useDispatch();
-  const { activeDoc, documents, isPreview } = useAppSelector((state) => state.docs);
+export default function Body(): ReactElement {
+  const dispatch = useAppDispatch();
+  const { activeDoc, isPreview } = useAppSelector((state) => state.docs);
 
   function newDoc() {
-    dispatch(documentActions.insertDocument());
-    if (documents) dispatch(documentActions.setActiveDocument(documents[0].id));
+    dispatch(insertDocument());
   }
 
   if (!activeDoc)

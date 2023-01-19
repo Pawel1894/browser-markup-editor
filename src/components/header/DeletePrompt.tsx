@@ -1,6 +1,6 @@
 import React, { ReactElement, SetStateAction } from "react";
 import { useAppDispatch } from "../../hooks/redux";
-import { documentActions } from "../../redux/document-slice";
+import { deleteDocs } from "../../redux/actions";
 
 interface Props {
   isOpen: boolean;
@@ -15,7 +15,7 @@ export default function DeletePrompt({ isOpen, setIsPromptOpen }: Props): ReactE
   }
 
   function deleteDocument() {
-    dispatch(documentActions.deleteDocument());
+    dispatch(deleteDocs());
     setIsPromptOpen(false);
   }
 

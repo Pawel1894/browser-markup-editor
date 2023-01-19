@@ -1,12 +1,12 @@
 import React, { ReactElement } from "react";
 import { toast } from "react-hot-toast";
 import { useAppDispatch } from "../../hooks/redux";
-import { documentActions } from "../../redux/document-slice";
+import { insertDocument } from "../../redux/actions";
 
 export default function NewDocumentBtn(): ReactElement {
   const dispatch = useAppDispatch();
   function onClickHandler() {
-    dispatch(documentActions.insertDocument());
+    dispatch(insertDocument());
     toast.success("New document created");
   }
 
