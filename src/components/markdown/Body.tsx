@@ -28,7 +28,7 @@ export default function Body(): ReactElement {
 
   return (
     <textarea
-      className="w-full min-h-screen p-4 font-mono text-sm"
+      className="w-full min-h-[calc(100vh-116px)] p-4 font-mono text-sm"
       value={activeDoc?.content ? activeDoc.content : ""}
       onChange={updateContent}
     />

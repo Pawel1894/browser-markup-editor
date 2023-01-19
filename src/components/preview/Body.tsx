@@ -8,7 +8,7 @@ interface Props {}
 
 export default function Body({}: Props): ReactElement {
   const dispatch = useDispatch();
-  const { activeDoc, documents } = useAppSelector((state) => state.docs);
+  const { activeDoc, documents, isPreview } = useAppSelector((state) => state.docs);
 
   function newDoc() {
     dispatch(documentActions.insertDocument());
@@ -25,5 +25,13 @@ export default function Body({}: Props): ReactElement {
       </div>
     );
 
-  return <ReactMarkdown>{activeDoc.content}</ReactMarkdown>;
+  return (
+    <ReactMarkdown
+      className={`p-6 overflow-y-auto  w-full max-h-[calc(100vh-120px)] ${
+        isPreview ? "md:max-w-screen-sm md:mx-auto" : ""
+      } preview-markdown`}
+    >
+      {activeDoc.content}
+    </ReactMarkdown>
+  );
 }

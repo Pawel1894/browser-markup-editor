@@ -37,6 +37,7 @@
 
   h2 {
     font-size: 1.75rem;
+    @apply font-light;
   }
 
   h3 {
@@ -79,5 +80,61 @@
   .primary-btn > span {
     @apply ml-1;
     @apply text-white;
+  }
+
+  .preview-markdown > * + * {
+    @apply my-6;
+  }
+
+  .preview-markdown :is(p, li) {
+    @apply text-neutral-600;
+    @apply text-sm;
+    @apply font-serif;
+    @apply font-normal;
+  }
+
+  .preview-markdown :is(ol, ul) {
+    @apply ml-6;
+  }
+
+  .preview-markdown ol li {
+    @apply list-decimal;
+  }
+
+  .preview-markdown ul li {
+    @apply list-disc;
+  }
+
+  .preview-markdown ul li::marker {
+    @apply text-primary-100;
+  }
+
+  .preview-markdown code {
+    @apply text-neutral-400;
+    @apply font-mono;
+    @apply text-sm;
+  }
+
+  .preview-markdown blockquote {
+    @apply bg-neutral-900;
+    @apply p-6;
+    @apply border-l-4;
+    @apply border-primary-100;
+    @apply rounded-sm;
+  }
+
+  .preview-markdown blockquote p {
+    @apply text-neutral-100;
+    @apply font-bold;
+  }
+
+  .preview-markdown a {
+    @apply underline-offset-2;
+    @apply underline;
+  }
+
+  .preview-markdown pre {
+    @apply bg-neutral-900;
+    @apply p-6;
   }
 }
