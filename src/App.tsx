@@ -5,6 +5,7 @@ import Sidebar from "./components/sidebar/Sidebar";
 import { useAppDispatch, useAppSelector } from "./hooks/redux";
 import data from "../public/data.json";
 import { documentActions } from "./redux/document-slice";
+import { Toaster, toast } from "react-hot-toast";
 
 function App() {
   const isMenuOpen = useAppSelector((state) => state.ui.isMenuOpen);
@@ -24,6 +25,11 @@ function App() {
           <Editor />
         </main>
       </div>
+      <Toaster
+        toastOptions={{
+          duration: 2000,
+        }}
+      />
     </div>
   );
 }
