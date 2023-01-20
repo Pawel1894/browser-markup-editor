@@ -3,7 +3,7 @@ import Editor from "./components/editor/Editor";
 import Header from "./components/header/Header";
 import Sidebar from "./components/sidebar/Sidebar";
 import { useAppDispatch, useAppSelector } from "./hooks/redux";
-import data from "../public/data.json";
+import data from "../src/assets/data.json";
 import { documentActions } from "./redux/document-slice";
 import { Toaster } from "react-hot-toast";
 import { TDocument } from "./types";
