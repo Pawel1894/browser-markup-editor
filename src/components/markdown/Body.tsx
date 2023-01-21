@@ -14,7 +14,6 @@ export default function Body(): ReactElement {
   if (!activeDoc)
     return (
       <div className="pl-4">
-        <span>No active document</span>
         <button onClick={newDoc} className="primary-btn">
           Create new
         </button>
