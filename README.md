@@ -13,8 +13,7 @@
 ## Overview   
 
 Recently i did spent some time on reading vitest and testing library docs. I made this project to start writing some UI tests. 
-I created test utils to use it in future projects, and have fast tests setup. I additionaly added toast alerts to this app and
-saving docs in localstorage.
+I created test utils to use it in future projects, and have fast tests setup. I additionaly added toast alerts and saving docs in localstorage.
 
 ### Website
 
