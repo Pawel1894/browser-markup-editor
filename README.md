@@ -40,6 +40,7 @@ I created test utils to use it in future projects, and have fast tests setup. I 
  - mockup functions
  - using react markdown
  - writing redux toolkit thunks
+ - creating dark theme with tailwindCSS
  
 ## Install process
 
