@@ -13,8 +13,8 @@ export default function Body(): ReactElement {
 
   if (!activeDoc)
     return (
-      <div className="rounded-md m-4">
-        <button onClick={newDoc} className="primary-btn">
+      <div className="m-4">
+        <button onClick={newDoc} className="primary-btn rounded-md">
           Create new
         </button>
       </div>
