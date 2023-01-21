@@ -7,6 +7,7 @@
   #root {
     @apply overflow-hidden;
     height: 100vh;
+    position: fixed;
   }
 
   body.dark {
