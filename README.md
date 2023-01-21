@@ -43,11 +43,11 @@ I created test utils to use it in future projects, and have fast tests setup. I 
 
 1. install [nodejs](https://nodejs.org/en/download/)
 2. navigate project folder in command line
-3. run `npm install` script
-4. run `npm run dev` script
+3. run `npm install`
+4. run `npm run dev`
 
 
 ## Build process
 
 1. open project folder in command line
-2. run `npm run build` script
+2. run `npm run build`
