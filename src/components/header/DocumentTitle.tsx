@@ -37,6 +37,7 @@ export default function DocumentTitle(): ReactElement {
       <div className="ml-4 ">
         <span className="hidden text-neutral-600 text-xs leading-none md:block">Document Name</span>
         <input
+          data-testid="titleInput"
           type="text"
           className={`text-white bg-[transparent] outline-none border-b border-b-[transparent] focus:border-b-neutral-800 caret-primary-100 selection:bg-primary-100`}
           value={activeDoc ? activeDoc.name : ""}

@@ -21,6 +21,7 @@ export default function DeletePrompt({ isOpen, setIsPromptOpen }: Props): ReactE
 
   return (
     <div
+      data-testid="deletePrompt"
       className={`${
         isOpen ? "block" : "hidden"
       } absolute left-0 top-0 bg-transparent dark:bg-lightTransparent w-screen h-screen`}
@@ -37,7 +38,11 @@ export default function DeletePrompt({ isOpen, setIsPromptOpen }: Props): ReactE
           Are you sure you want to delete the ‘welcome.md’ document and its contents? This action cannot be
           reversed.
         </p>
-        <button className="primary-btn rounded-md w-full" onClick={deleteDocument}>
+        <button
+          data-testid="confirmDeletion"
+          className="primary-btn rounded-md w-full"
+          onClick={deleteDocument}
+        >
           <span>Confirm & Delete</span>
         </button>
       </div>

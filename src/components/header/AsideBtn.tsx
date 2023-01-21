@@ -12,6 +12,7 @@ export default function AsideBtn(): ReactElement {
 
   return (
     <button
+      data-testid="menuBtn"
       className="flex items-center justify-center w-full h-14 md:h-[72px] bg-neutral-400 hover:bg-primary-100"
       onClick={toggleSidebar}
     >

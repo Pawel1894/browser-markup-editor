@@ -16,7 +16,12 @@ export default function DocumentSave(): ReactElement {
   }
 
   return (
-    <button aria-label="Save changes" className="primary-btn p-3 rounded-md" onClick={onClickHandler}>
+    <button
+      data-testid="saveBtn"
+      aria-label="Save changes"
+      className="primary-btn p-3 rounded-md"
+      onClick={onClickHandler}
+    >
       <img src={SaveIcon} alt="" aria-hidden={true} />
       <span className="hidden md:inline-block">Save Changes</span>
     </button>

@@ -12,6 +12,7 @@ export default function NewDocumentBtn(): ReactElement {
 
   return (
     <button
+      data-testid="newDocBtn"
       aria-label="New document"
       onClick={onClickHandler}
       className="primary-btn w-full p-3 rounded-md mt-7"

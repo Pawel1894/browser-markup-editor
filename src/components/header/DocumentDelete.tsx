@@ -12,7 +12,7 @@ export default function DocumentDelete(): ReactElement {
   return (
     <>
       <DeletePrompt isOpen={isPromptOpen} setIsPromptOpen={setIsPromptOpen} />
-      <button className="ml-auto" onClick={onClickHandler}>
+      <button data-testid="removeBtn" className="ml-auto" onClick={onClickHandler}>
         <img src={DeleteIcon} aria-hidden={true} alt="" />
         <span className="sr-only">delete markdown document</span>
       </button>
