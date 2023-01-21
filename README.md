@@ -28,7 +28,7 @@ saving docs in localstorage.
  - [Vitest](https://vitest.dev/)
  - [Testing library](https://testing-library.com/)
  - [TypeScript](https://www.typescriptlang.org/)
- - [Redux toolkit](https://redux-toolkit.js.org/
+ - [Redux toolkit](https://redux-toolkit.js.org/)
  - [React hot toast](https://react-hot-toast.com/)
  - [Local Storage web API](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
  - [React markdown](https://github.com/remarkjs/react-markdown)
