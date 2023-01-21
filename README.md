@@ -1,4 +1,4 @@
-# [Frontend Mentor - In-browser markdown editor](https://jolly-croissant-507415.netlify.app/)
+# [In-browser markdown editor](https://jolly-croissant-507415.netlify.app/)
 
 ## [Deigned by Frontend Mentor](https://www.frontendmentor.io/challenges/inbrowser-markdown-editor-r16TrrQX9/hub)
 
