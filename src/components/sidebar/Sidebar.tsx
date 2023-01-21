@@ -6,11 +6,7 @@ import ThemeToggle from "./ThemeToggle";
 
 export default function Sidebar(): ReactElement {
   return (
-    <aside
-      aria-hidden="true"
-      data-testid="sidebar"
-      className="sidebar relative px-6 py-7 bg-neutral-200 h-screen"
-    >
+    <aside data-testid="sidebar" className="sidebar relative px-6 py-7 bg-neutral-200 h-screen">
       <div>
         <img src={Logo} alt="" />
       </div>

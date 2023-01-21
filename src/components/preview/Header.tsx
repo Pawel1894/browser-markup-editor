@@ -16,6 +16,7 @@ export default function Header(): ReactElement {
         PREVIEW
       </span>
       <button onClick={onClickHandler}>
+        <span className="sr-only">hide preview</span>
         <img src={HideIcon} alt="" />
       </button>
     </div>

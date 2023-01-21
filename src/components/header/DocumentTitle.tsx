@@ -33,10 +33,13 @@ export default function DocumentTitle(): ReactElement {
 
   return (
     <div title="test.md" className="relative flex items-center overflow-x-auto">
-      <img className="cursor-pointer" onClick={copyMarkdown} src={CopyIcon} />
+      <img role={"button"} className="cursor-pointer" onClick={copyMarkdown} src={CopyIcon} alt="" />
       <div className="ml-4 ">
-        <span className="hidden text-neutral-600 text-xs leading-none md:block">Document Name</span>
+        <label className="hidden text-neutral-600 text-xs leading-none md:block" htmlFor="docName">
+          Document Name
+        </label>
         <input
+          id="docName"
           data-testid="titleInput"
           type="text"
           className={`text-white bg-[transparent] outline-none border-b border-b-[transparent] focus:border-b-neutral-800 caret-primary-100 selection:bg-primary-100`}

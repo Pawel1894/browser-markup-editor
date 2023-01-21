@@ -23,7 +23,7 @@ export default function Document({ createdAt, name, id }: Props): ReactElement {
       title={name}
       className="group relative flex items-center overflow-x-auto mt-6 "
     >
-      <img src={CopyIcon} />
+      <img src={CopyIcon} alt="" />
       <div className="ml-4 ">
         <span className="hidden w-fit text-neutral-600 text-xs leading-none md:block">{createdAt}</span>
         <span

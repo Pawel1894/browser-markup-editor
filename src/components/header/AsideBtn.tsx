@@ -16,7 +16,8 @@ export default function AsideBtn(): ReactElement {
       className="flex items-center justify-center w-full h-14 md:h-[72px] bg-neutral-400 hover:bg-primary-100"
       onClick={toggleSidebar}
     >
-      <img src={isMenuOpen ? CloseIcon : MenuIcon} />
+      <span className="sr-only">{isMenuOpen ? "close menu" : "show menu"}</span>
+      <img src={isMenuOpen ? CloseIcon : MenuIcon} alt="/>
     </button>
   );
 }

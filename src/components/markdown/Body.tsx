@@ -27,11 +27,17 @@ export default function Body(): ReactElement {
   }
 
   return (
-    <textarea
-      data-testid="markdownArea"
-      className="w-full bg-white dark:bg-neutral-100 dark:text-neutral-700 p-4 font-mono text-sm"
-      value={activeDoc?.content ? activeDoc.content : ""}
-      onChange={updateContent}
-    />
+    <>
+      <label className="sr-only" htmlFor="markdownEditor">
+        Markdown editor
+      </label>
+      <textarea
+        id="markdownEditor"
+        data-testid="markdownArea"
+        className="w-full bg-white dark:bg-neutral-100 dark:text-neutral-700 p-4 font-mono text-sm"
+        value={activeDoc?.content ? activeDoc.content : ""}
+        onChange={updateContent}
+      />
+    </>
   );
 }
