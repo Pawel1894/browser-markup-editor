@@ -13,7 +13,7 @@ export default function Body(): ReactElement {
 
   if (!activeDoc)
     return (
-      <div className="pl-4">
+      <div className="rounded-md m-4">
         <button onClick={newDoc} className="primary-btn">
           Create new
         </button>
