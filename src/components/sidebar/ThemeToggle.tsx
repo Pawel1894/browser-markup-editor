@@ -27,6 +27,7 @@ export default function ThemeToggle(): ReactElement {
             !isDark ? "translate-x-[170%]" : null
           }`}
         ></span>
+        <span className="sr-only">switch theme</span>
       </button>
       <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
         <path

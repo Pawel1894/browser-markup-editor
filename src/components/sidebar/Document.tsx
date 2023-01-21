@@ -25,7 +25,7 @@ export default function Document({ createdAt, name, id }: Props): ReactElement {
         className="group relative flex items-center overflow-x-auto mt-6 "
       >
         <img src={CopyIcon} alt="" />
-        <div className="ml-4 ">
+        <span className="ml-4 block">
           <span className="hidden w-fit text-neutral-600 text-xs leading-none md:block">{createdAt}</span>
           <span
             className={`${
@@ -34,7 +34,7 @@ export default function Document({ createdAt, name, id }: Props): ReactElement {
           >
             {name}
           </span>
-        </div>
+        </span>
       </button>
     </li>
   );

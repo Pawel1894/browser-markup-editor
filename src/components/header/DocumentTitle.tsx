@@ -28,12 +28,16 @@ export default function DocumentTitle(): ReactElement {
       } catch (error) {
         toast.error("copy failed");
       }
+    } else {
+      toast.error("nothing to copy");
     }
   }
 
   return (
     <div title="test.md" className="relative flex items-center overflow-x-auto">
-      <img role={"button"} className="cursor-pointer" onClick={copyMarkdown} src={CopyIcon} alt="" />
+      <button onClick={copyMarkdown}>
+        <img src={CopyIcon} alt="copy markdown" />
+      </button>
       <div className="ml-4 ">
         <label className="hidden text-neutral-600 text-xs leading-none md:block" htmlFor="docName">
           Document Name
