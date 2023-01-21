@@ -1,7 +1,6 @@
 import React, { ReactElement } from "react";
 import SaveIcon from "../../assets/icon-save.svg";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
-import { documentActions } from "../../redux/document-slice";
 import { toast } from "react-hot-toast";
 import { saveDocument } from "../../redux/actions";
 
@@ -11,8 +10,6 @@ export default function DocumentSave(): ReactElement {
 
   function onClickHandler() {
     dispatch(saveDocument());
-    // saveItem("docs", docs);
-    // documentActions.saveChanges()
     toast.success("Document saved");
   }
 

@@ -22,7 +22,7 @@ export default function Body(): ReactElement {
 
   return (
     <ReactMarkdown
-      className={`p-6 bg-white dark:bg-neutral-100 overflow-y-auto w-full ${
+      className={`overflow-y-auto p-6 bg-white dark:bg-neutral-100 w-full ${
         isPreview ? "md:max-w-screen-sm md:mx-auto" : ""
       } preview-markdown`}
     >

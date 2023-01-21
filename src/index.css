@@ -6,6 +6,7 @@
   body,
   #root {
     @apply overflow-hidden;
+    height: 100vh;
   }
 
   body.dark {
@@ -43,9 +44,13 @@
     @apply hidden;
   }
 
+  .preview-markdown {
+    height: calc(100vh - 123px);
+  }
+
   .preview-closed .markdown textarea {
     @apply block;
-    min-height: calc(100vh - 105px);
+    min-height: calc(100vh - 123px);
   }
 
   .preview-open .markdown {
@@ -60,7 +65,7 @@
 
     .preview-closed .preview {
       @apply block;
-      min-height: calc(100vh - 72px);
+      max-height: calc(100vh - 65px);
       @apply border-l;
       @apply border-neutral-800;
     }
@@ -134,7 +139,7 @@
   }
 
   .preview-markdown > * + * {
-    @apply my-6;
+    @apply mt-6;
   }
 
   .preview-markdown :is(p, li) {
@@ -168,6 +173,7 @@
     @apply text-neutral-400;
     @apply font-mono;
     @apply text-sm;
+    @apply whitespace-pre-wrap;
   }
 
   .dark .preview-markdown code {
