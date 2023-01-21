@@ -1,4 +1,5 @@
 import React, { ReactElement, SetStateAction } from "react";
+import { toast } from "react-hot-toast";
 import { useAppDispatch } from "../../hooks/redux";
 import { deleteDocs } from "../../redux/actions";
 
@@ -17,6 +18,7 @@ export default function DeletePrompt({ isOpen, setIsPromptOpen }: Props): ReactE
   function deleteDocument() {
     dispatch(deleteDocs());
     setIsPromptOpen(false);
+    toast.success("document deleted");
   }
 
   return (
