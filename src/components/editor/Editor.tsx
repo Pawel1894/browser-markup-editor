@@ -9,7 +9,7 @@ export default function Editor(): ReactElement {
   return (
     <div className={`grid grid-cols-1 ${!isPreview ? "md:grid-cols-2" : null}`}>
       {!isPreview ? <Markdown /> : null}
-      {isPreview || window.innerWidth >= 768 ? <Preview /> : null}
+      {isPreview || window.innerWidth >= 768 ? <Preview isPreview={isPreview} /> : null}
     </div>
   );
 }
