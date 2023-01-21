@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 @layer base {
-  body {
+  body,
+  #root {
     @apply overflow-hidden;
   }
 
@@ -16,22 +17,53 @@
   }
 
   .sidebar {
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 1s;
+    @apply visible;
+    @apply opacity-100;
+    @apply transition-opacity;
   }
 
   .menu-closed .wrapper .sidebar {
-    visibility: hidden;
-    opacity: 0;
-    width: 0;
-    height: 0;
-    padding: 0;
-    margin: 0;
+    @apply invisible;
+    @apply opacity-0;
+    @apply w-0;
+    @apply h-0;
+    @apply p-0;
+    @apply m-0;
   }
 
   .menu-closed .wrapper {
     grid-template-columns: 0px 100vw;
+  }
+
+  .preview-open .preview {
+    @apply block;
+  }
+
+  .preview-closed .preview {
+    @apply hidden;
+  }
+
+  .preview-closed .markdown textarea {
+    @apply block;
+    min-height: calc(100vh - 105px);
+  }
+
+  .preview-open .markdown {
+    @apply hidden;
+  }
+
+  @media (min-width: 768px) {
+    .preview-closed .editor {
+      @apply grid;
+      @apply grid-cols-2;
+    }
+
+    .preview-closed .preview {
+      @apply block;
+      min-height: calc(100vh - 72px);
+      @apply border-l;
+      @apply border-neutral-800;
+    }
   }
 
   :is(h1, h2, h3, h4, h5, h6) {
@@ -90,6 +122,10 @@
   .primary-btn:active {
     @apply bg-primary-200;
     @apply transition-colors;
+  }
+
+  .primary-btn:disabled {
+    @apply bg-neutral-500;
   }
 
   .primary-btn > span {

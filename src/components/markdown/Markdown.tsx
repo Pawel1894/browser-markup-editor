@@ -4,7 +4,7 @@ import Header from "./Header";
 
 export const Markdown = () => {
   return (
-    <div>
+    <div className="markdown">
       <Header />
       <Body />
     </div>

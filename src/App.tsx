@@ -11,6 +11,7 @@ import { getItem, saveItem } from "./helpers/localStorage";
 
 function App() {
   const dispatch = useAppDispatch();
+  const isPreview = useAppSelector((state) => state.docs.isPreview);
 
   useEffect(() => {
     const localData: TDocument[] = getItem("docs");
@@ -22,7 +23,7 @@ function App() {
   }, []);
 
   return (
-    <div className={`grid wrapper transition-all`}>
+    <div className={`grid wrapper ${isPreview ? "preview-open" : "preview-closed"} transition-all`}>
       <Sidebar />
       <div>
         <Header />

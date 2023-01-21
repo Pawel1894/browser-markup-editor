@@ -2,13 +2,9 @@ import React, { ReactElement } from "react";
 import Body from "./Body";
 import Header from "./Header";
 
-interface Props {
-  isPreview: boolean;
-}
-
-export default function Preview({ isPreview }: Props): ReactElement {
+export default function Preview(): ReactElement {
   return (
-    <div className={`${isPreview && window.innerWidth > 768 ? "border-l border-neutral-800" : ""}`}>
+    <div className={`preview`}>
       <Header />
       <Body />
     </div>
