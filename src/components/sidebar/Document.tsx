@@ -18,22 +18,24 @@ export default function Document({ createdAt, name, id }: Props): ReactElement {
   }
 
   return (
-    <button
-      onClick={setActiveDocument}
-      title={name}
-      className="group relative flex items-center overflow-x-auto mt-6 "
-    >
-      <img src={CopyIcon} alt="" />
-      <div className="ml-4 ">
-        <span className="hidden w-fit text-neutral-600 text-xs leading-none md:block">{createdAt}</span>
-        <span
-          className={`${
-            activeDocId === id ? "text-primary-100" : "text-white"
-          }  group-hover:text-primary-100`}
-        >
-          {name}
-        </span>
-      </div>
-    </button>
+    <li className="overflow-x-hidden">
+      <button
+        onClick={setActiveDocument}
+        title={name}
+        className="group relative flex items-center overflow-x-auto mt-6 "
+      >
+        <img src={CopyIcon} alt="" />
+        <div className="ml-4 ">
+          <span className="hidden w-fit text-neutral-600 text-xs leading-none md:block">{createdAt}</span>
+          <span
+            className={`${
+              activeDocId === id ? "text-primary-100" : "text-white"
+            }  group-hover:text-primary-100 block text-left w-min`}
+          >
+            {name}
+          </span>
+        </div>
+      </button>
+    </li>
   );
 }

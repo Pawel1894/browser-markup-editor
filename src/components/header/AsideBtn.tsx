@@ -17,7 +17,7 @@ export default function AsideBtn(): ReactElement {
       onClick={toggleSidebar}
     >
       <span className="sr-only">{isMenuOpen ? "close menu" : "show menu"}</span>
-      <img src={isMenuOpen ? CloseIcon : MenuIcon} alt="/>
+      <img src={isMenuOpen ? CloseIcon : MenuIcon} alt="" />
     </button>
   );
 }

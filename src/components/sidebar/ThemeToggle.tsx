@@ -17,7 +17,6 @@ export default function ThemeToggle(): ReactElement {
         />
       </svg>
       <button
-        role={"button"}
         data-testid="themeToggle"
         onClick={toggleTheme}
         className="w-12 h-6 bg-neutral-500 rounded-full relative p-2 flex items-center cursor-pointer"
