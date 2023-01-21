@@ -44,6 +44,10 @@
     @apply hidden;
   }
 
+  .preview {
+    height: calc(100vh - 72px);
+  }
+
   .preview-markdown {
     height: calc(100vh - 123px);
   }
