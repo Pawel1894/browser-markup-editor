@@ -3,7 +3,7 @@ import MenuIcon from "../../assets/icon-menu.svg";
 import CloseIcon from "../../assets/icon-close.svg";
 
 export default function AsideBtn(): ReactElement {
-  const [isMenuOpen, setIsMenuOpen] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   function toggleSidebar() {
     setIsMenuOpen((prev) => !prev);
