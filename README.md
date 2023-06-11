@@ -1,12 +1,11 @@
-# [In-browser markdown editor](https://jolly-croissant-507415.netlify.app/)
+# [Browser markdown editor](https://jolly-croissant-507415.netlify.app/)
 
-## [Deigned by Frontend Mentor](https://www.frontendmentor.io/challenges/inbrowser-markdown-editor-r16TrrQX9/hub)
+## [Designed by Frontend Mentor](https://www.frontendmentor.io/challenges/inbrowser-markdown-editor-r16TrrQX9/hub)
 
 ## Table of contents
 
 - [Overview](#overview)
-  - [Motivation](#motivation)
-  - [Website](#website)  
+- [Website](#website)  
 - [Built with](#built-with)  
 - [What I learned](#what-i-learned)
 - [Install process](#install-process)
@@ -14,10 +13,9 @@
   
 ## Overview   
 
-Recently i did spent some time on reading vitest and testing library docs. I made this project to start writing some UI tests. 
-I created test utils to use it in future projects, and have fast tests setup. I additionaly added toast alerts and saving docs in localstorage.
+Recently, I’ve been reading Vitest and testing library docs. I made this project to start writing UI tests. I also added toast alerts and docs saving in localStorage.
 
-### Website
+## Website
 
 [App live demo](https://jolly-croissant-507415.netlify.app/)
 
@@ -27,25 +25,26 @@ I created test utils to use it in future projects, and have fast tests setup. I 
  - [React](https://reactjs.org/)
  - [Vite](https://vitejs.dev/)
  - [Vitest](https://vitest.dev/)
- - [Testing library](https://testing-library.com/)
+ - [Testing Library](https://testing-library.com/)
  - [TypeScript](https://www.typescriptlang.org/)
- - [Redux toolkit](https://redux-toolkit.js.org/)
- - [React hot toast](https://react-hot-toast.com/)
- - [Local Storage web API](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
- - [React markdown](https://github.com/remarkjs/react-markdown)
+ - [Redux Toolkit](https://redux-toolkit.js.org/)
+ - [React Hot Toast](https://react-hot-toast.com/)
+ - [localStorage Web APIs](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
+ - [React Markdown](https://github.com/remarkjs/react-markdown)
  
 ## What I learned 
- - configuration and setup vitest and testing library
- - testing ui rendering and user interactions
- - mockup functions
- - using react markdown
- - writing redux toolkit thunks
- - creating dark theme with tailwindCSS
+- Vitest and Testing Library configuration and setup 
+- testing UI rendering and user interactions
+- mockup functions
+- using React Markdown
+- writing Redux Toolkit thunks
+- creating dark theme with TailwindCSS
+
  
 ## Install process
 
-1. install [nodejs](https://nodejs.org/en/download/)
-2. navigate project folder in command line
+1. install [Node.js](https://nodejs.org/en/download/)
+2. navigate to project folder in command line
 3. run `npm install`
 4. run `npm run dev`
 
